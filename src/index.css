@@ -64,6 +64,7 @@ h1{
 
 ::placeholder{
   color: #f8f8f8;
+  /* align-items: center; */
 }
 
 .container{

@@ -36,7 +36,7 @@ function App() {
           <div className="location">
             <p>{data.name}</p>
             <div className="temp">
-              {data.main ? <h1>{data.main.temp.toFixed( )}°F</h1> : null}
+              {data.main ? <h1>{((data.main.feels_like - 32) * (5/9)).toFixed()}°C</h1> : null}
             </div>
             <div className="description">
             {data.weather ? <p>{data.weather[0].main}</p> : null}
@@ -45,9 +45,10 @@ function App() {
           </div>
         </div>
 
-{data.name !== undefined && <div className="bottom">
+{data.name !== undefined &&
+       <div className="bottom">
           <div className="feels">
-            {data.main ? <p className='bold'>{data.main.feels_like.toFixed()}°F</p> : null}
+            {data.main ? <p className='bold'>{((data.main.feels_like - 32) * (5/9)).toFixed()}°C</p> : null}
             <p className="bold"></p>
             <p>Feels Like</p>
           </div>
